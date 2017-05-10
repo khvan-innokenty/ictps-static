@@ -1,0 +1,6 @@
+# Enable rewrite engine and route requests to framework
+RewriteEngine On
+RewriteRule ^ru/?$ index.php?lang=ru [L,QSA]
+RewriteRule ^en/?$ index.php?lang=en [L,QSA]
+RewriteRule ^register/?$ register.php [L,QSA]
+RewriteRule ^location/?$ location.php [L,QSA]
