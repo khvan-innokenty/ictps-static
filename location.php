@@ -42,7 +42,7 @@ function getRussiaLocation( $ip ) {
     );
 
     $context = stream_context_create($options);
-    $result = file_get_contents("https://dadata.ru/api/v2/detectAddressByIp?ip=".$ip, false, $context);
+    $result = @file_get_contents("https://dadata.ru/api/v2/detectAddressByIp?ip=".$ip, false, $context);
     return $result === false ? null : json_decode($result, true);
 }
 

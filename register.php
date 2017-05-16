@@ -1,5 +1,5 @@
 <?php
-define('DEBUG', false);
+define('DEBUG', true);
 include_once "PHPMailer/PHPMailerAutoload.php";
 
 register();
@@ -28,6 +28,14 @@ function register() {
 		array(
 			'title' => "Конференция 9 – 10 июня для онкологов",
 			'id' => 3175
+		),
+		array(
+			'title' => "Диссекционный курс + конференция",
+			'id' => 100
+		),
+		array(
+			'title' => "Диссекционный курс без участия в конференции",
+			'id' => 200
 		)
 	);
 	$ticketId = intval($post['ticket']);
@@ -43,14 +51,10 @@ function register() {
 	$data[] = date('d.m.Y H:i:s');
 	$data[] = "РЕГИСТРАЦИЯ";
 	$data[] = "Пакет участия: " . $ticketTitle . " (id=" . $ticketId . ")";
-	$data[] = "Фамилия: " . $post['f'];
-	$data[] = "Имя: " . $post['i'];
-	$data[] = "Отчество: " . $post['o'];
+	$data[] = "ФИО: " . $post['fullname'];
 	$data[] = "Телефон: " . $post['tel'];
 	$data[] = "Почта: " . $post['email'];
-	$data[] = "Город: " . $post['city'];
-	$data[] = "Специальность: " . $post['profession'];
-	$data[] = "Место работы: " . $post['job'];
+	$data[] = "Город (по IP-адресу): " . $post['city'];
 	$data[] = "Уже посещал ICTPS ранее: " . ($post['regular'] ? 'ДА' : 'нет');
 	$data[] = "Ординатор/интерн/аспирант: " . ($post['student'] ? 'ДА' : 'нет');
 	$data[] = "Член РОПРЭХ: " . ($post['spras'] ? 'ДА' : 'нет');
@@ -61,19 +65,12 @@ function register() {
 	$data[] = "---------------------------------------";
 	$data[] = "";
 
-	sendEmail('d.medentsov@bioconcept.ru', 'Регистрация на ICTPS (' . $post['f'] . ')', $data );
+	sendEmail('d.medentsov@bioconcept.ru', 'Регистрация на ICTPS (' . $post['fullname'] . ')', $data );
+	sendEmail('events@bioconcept.ru', 'Регистрация на ICTPS (' . $post['fullname'] . ')', $data );
 
 	file_put_contents( dirname(__FILE__) .'/registration.txt', implode("\r\n", $data), FILE_APPEND);
 
-	$myCurl = curl_init();
-	curl_setopt_array($myCurl, array(
-		CURLOPT_URL => 'http://www.ictps.ru/events/new_order.php',
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_POST => true,
-		CURLOPT_POSTFIELDS => http_build_query($post)
-	));
-	$response = curl_exec($myCurl);
-	curl_close($myCurl);
+	$response = '{"status":1, "msg":"Вы успешно зарегистрированы на мероприятие."}';
 
 	echo $response;
 }
