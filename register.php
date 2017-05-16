@@ -1,5 +1,5 @@
 <?php
-define('DEBUG', true);
+define('DEBUG', false);
 include_once "PHPMailer/PHPMailerAutoload.php";
 
 register();
