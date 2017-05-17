@@ -19,15 +19,15 @@
     <div class="container cf">
         <div class="header__left">
             <ul class="header__navigation cf" id="navigation">
-                <li><a href="#about"><span>{{ @DICT.about }}</span></a></li>
-                <li><a href="#schedule"><span>{{ @DICT.schedule }}</span></a></li>
+                <li><a href="#about" class="js-smooth"><span>{{ @DICT.about }}</span></a></li>
+                <li><a href="#schedule" class="js-smooth"><span>{{ @DICT.schedule }}</span></a></li>
                 <check if="{{ @LANG === 'ru' }}">
-                    <li><a href="#dissection"><span>{{ @DICT.dissection }}</span></a></li>
-                    <li><a href="#pricelist"><span>{{ @DICT.pricelist }}</span></a></li>
-                    <li><a href="#book"><span>{{ @DICT.book }}</span></a></li>
+                    <li><a href="#dissection" class="js-smooth"><span>{{ @DICT.dissection }}</span></a></li>
+                    <li><a href="#pricelist" class="js-smooth"><span>{{ @DICT.pricelist }}</span></a></li>
+                    <li><a href="#book" class="js-smooth"><span>{{ @DICT.book }}</span></a></li>
                 </check>
-                <li><a href="#gala-dinner"><span>{{ @DICT.dinner }}</span></a></li>
-                <li><a href="#venue"><span>{{ @DICT.venue }}</span></a></li>
+                <li><a href="#gala-dinner" class="js-smooth"><span>{{ @DICT.dinner }}</span></a></li>
+                <li><a href="#venue" class="js-smooth"><span>{{ @DICT.venue }}</span></a></li>
                 <check if="{{ @LANG === 'ru' }}"><li class="show-on-mobile"><a href="http://practiceconf.ru" class="change-site-2" target="_blank"><span>Курс для руководителей</span></a></li></check>
                 <li class="show-on-mobile"><a href="http://www.iectc.ru" class="change-site" target="_blank"><span>IECTC 2017</span></a></li>
             </ul>
@@ -168,7 +168,7 @@
                     <p><b>Нефиксированный</b> биологический материал высочайшего качества.</p>
                     <p>2 участника на препарат.</p>
                     <p>Каждый участник <b>отработает навыки</b> под руководством тренера и проведёт диссекцию.</p>
-                    <a class="button button-small" href="#book">Забронировать место</a>
+                    <a class="button button-small js-smooth" href="#book">Забронировать место</a>
                 </div>
             </div>
         </div>
@@ -341,7 +341,7 @@
                                     <input type="hidden" name="recipientAmount" value="">
                                     <input type="hidden" name="user_email" value="">
                                     <input type="hidden" name="userField_1" value="">
-                                    <button type="submit" class="button button--pay" tabindex="-1"><span>Оплатить</span></button>
+                                    <button type="submit" class="button button--pay" tabindex="-1"><span>Оплатить <span id="rf-total-price"></span> руб.</span></button>
                                 </form>
                             </div>
                         </div>
@@ -364,9 +364,6 @@
             </div>
 
             <div class="rf__footer">
-                <div class="rf__total-price">
-                    К оплате: <span class="primary"><span id="rf-total-price"></span> руб.</span>
-                </div>
                 <button class="button js-prev" disabled>
                     <span class="arrow_left">←</span> Назад
                 </button>
@@ -405,6 +402,24 @@
         </div>
     </div>
 </div>
+
+    <div class="business block" id="business">
+            <div class="container">
+                <h2>Бизнес-практикум для руководителей</h2>
+                <div class="business__title">&laquo;Как увеличить оборот клиники на 100%&raquo;</div>
+                <div class="business__hero">
+                    <img class="business__hero__bg" src="/img/growth.svg">
+                    <img class="business__hero__logo" src="/img/ruble.svg">
+                    <div class="business__hero__description">
+                        <div class="business__hero__dates">9&ndash;10 июня 2017</div>
+                        В рамках IECTS / ICTPS
+                    </div>
+                </div>
+                <p class="text-center">
+                    <a href="http://practiceconf.ru" target="_blank" class="button">Посмотреть программу</a>
+                </p>
+            </div>
+        </div>
 
 <div class="venue block" id="venue">
     <div class="container">

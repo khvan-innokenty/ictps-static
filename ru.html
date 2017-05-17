@@ -12,7 +12,7 @@
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu:300,400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="/dist/style.css?v=55">
+    <link rel="stylesheet" href="/dist/style.css?v=60">
 </head>
 
 <body>
@@ -20,13 +20,13 @@
     <div class="container cf">
         <div class="header__left">
             <ul class="header__navigation cf" id="navigation">
-                <li><a href="#about"><span>О курсе</span></a></li>
-                <li><a href="#schedule"><span>Программа</span></a></li>
-                <li><a href="#dissection"><span>Диссекционный курс</span></a></li>
-                <li><a href="#pricelist"><span>Стоимость</span></a></li>
-                <li><a href="#book"><span>Забронировать</span></a></li>
-                <li><a href="#gala-dinner"><span>Гала-ужин</span></a></li>
-                <li><a href="#venue"><span>Место проведения</span></a></li>
+                <li><a href="#about" class="js-smooth"><span>О курсе</span></a></li>
+                <li><a href="#schedule" class="js-smooth"><span>Программа</span></a></li>
+                <li><a href="#dissection" class="js-smooth"><span>Диссекционный курс</span></a></li>
+                <li><a href="#pricelist" class="js-smooth"><span>Стоимость</span></a></li>
+                <li><a href="#book" class="js-smooth"><span>Забронировать</span></a></li>
+                <li><a href="#gala-dinner" class="js-smooth"><span>Гала-ужин</span></a></li>
+                <li><a href="#venue" class="js-smooth"><span>Место проведения</span></a></li>
                 <li class="show-on-mobile"><a href="http://practiceconf.ru" class="change-site-2" target="_blank"><span>Курс для руководителей</span></a></li>                <li class="show-on-mobile"><a href="http://www.iectc.ru" class="change-site" target="_blank"><span>IECTC 2017</span></a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -1006,7 +1006,7 @@
                 <p><b>Нефиксированный</b> биологический материал высочайшего качества.</p>
                 <p>2 участника на препарат.</p>
                 <p>Каждый участник <b>отработает навыки</b> под руководством тренера и проведёт диссекцию.</p>
-                <a class="button button-small" href="#book">Забронировать место</a>
+                <a class="button button-small js-smooth" href="#book">Забронировать место</a>
             </div>
         </div>
     </div>
@@ -1297,7 +1297,7 @@
 
                             <form action="https://rbkmoney.ru/acceptpurchase.aspx" name="pay" method="POST" id="rbk">
                                 <input type="hidden" name="eshopId" value="2033199">
-                                <input type="hidden" name="orderId" value="0516122304">
+                                <input type="hidden" name="orderId" value="0517020330">
                                 <input type="hidden" name="serviceName" value="Форма регистрации участника VII МЕЖДУНАРОДНЫЙ КУРС-ТРЕНИНГ ДЛЯ ПЛАСТИЧЕСКИХ И РЕКОНСТРУКТИВНЫХ ХИРУРГОВ">
                                 <input type="hidden" name="successUrl" value="http://ictps.ru">
                                 <input type="hidden" name="failUrl" value="http://ictps.ru">
@@ -1305,7 +1305,7 @@
                                 <input type="hidden" name="recipientAmount" value="">
                                 <input type="hidden" name="user_email" value="">
                                 <input type="hidden" name="userField_1" value="">
-                                <button type="submit" class="button button--pay" tabindex="-1"><span>Оплатить</span></button>
+                                <button type="submit" class="button button--pay" tabindex="-1"><span>Оплатить <span id="rf-total-price"></span> руб.</span></button>
                             </form>
                         </div>
                     </div>
@@ -1328,9 +1328,6 @@
         </div>
 
         <div class="rf__footer">
-            <div class="rf__total-price">
-                К оплате: <span class="primary"><span id="rf-total-price"></span> руб.</span>
-            </div>
             <button class="button js-prev" disabled>
                 <span class="arrow_left">←</span> Назад
             </button>
@@ -1360,6 +1357,24 @@
                 Трансфер к гостинице                <div class="dinner__transfer__time dinner__transfer__time--last"><span class="dinner__at">в</span> 00:00</div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="business block" id="business">
+    <div class="container">
+        <h2>Бизнес-практикум для руководителей</h2>
+        <div class="business__title">&laquo;Как увеличить оборот клиники на 100%&raquo;</div>
+        <div class="business__hero">
+            <img class="business__hero__bg" src="/img/growth.svg">
+            <img class="business__hero__logo" src="/img/ruble.svg">
+            <div class="business__hero__description">
+                <div class="business__hero__dates">9&ndash;10 июня 2017</div>
+                В рамках IECTS / ICTPS
+            </div>
+        </div>
+        <p class="text-center">
+            <a href="http://practiceconf.ru" target="_blank" class="button">Посмотреть программу</a>
+        </p>
     </div>
 </div>
 
@@ -1509,7 +1524,7 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="/dist/app.min.js?v=55"></script>
+<script src="/dist/app.min.js?v=60"></script>
 
 <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter28534656 = new Ya.Metrika({ id:28534656, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/28534656" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 </body>
